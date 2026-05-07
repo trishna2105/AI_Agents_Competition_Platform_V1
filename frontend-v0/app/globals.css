@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #080806;
+  --foreground: #f6f1df;
+  --card: #10100d;
+  --card-foreground: #f6f1df;
+  --popover: #10100d;
+  --popover-foreground: #f6f1df;
+  --primary: #ff6b35;
+  --primary-foreground: #100b08;
+  --secondary: #1d1c17;
+  --secondary-foreground: #f6f1df;
+  --muted: #171611;
+  --muted-foreground: #b8b09a;
+  --accent: #2dd4bf;
+  --accent-foreground: #06110f;
+  --destructive: #ff4655;
+  --destructive-foreground: #fff8ea;
+  --border: #3c3527;
+  --input: #171611;
+  --ring: #ff6b35;
+  --chart-1: #ff6b35;
+  --chart-2: #2dd4bf;
+  --chart-3: #ffd166;
+  --chart-4: #f6f1df;
+  --chart-5: #ff4655;
+  --radius: 0.25rem;
+  --sidebar: #0c0c09;
+  --sidebar-foreground: #f6f1df;
+  --sidebar-primary: #ff6b35;
+  --sidebar-primary-foreground: #100b08;
+  --sidebar-accent: #1d1c17;
+  --sidebar-accent-foreground: #f6f1df;
+  --sidebar-border: #3c3527;
+  --sidebar-ring: #ff6b35;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      linear-gradient(rgba(255, 107, 53, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 53, 0.07) 1px, transparent 1px),
+      radial-gradient(circle at top right, rgba(45, 212, 191, 0.12), transparent 28rem);
+    background-size: 42px 42px, 42px 42px, auto;
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  label {
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  [data-slot='card'] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 42%),
+      var(--card) !important;
+    box-shadow: 6px 6px 0 #000 !important;
+  }
+
+  [data-slot='button'] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius) !important;
+    box-shadow: 3px 3px 0 #000;
+    font-family: inherit;
+    text-transform: uppercase;
+  }
+
+  [data-slot='button']:active {
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
+  }
+
+  [data-slot='input'],
+  textarea {
+    border-radius: var(--radius) !important;
+    border-color: var(--border) !important;
+    background: var(--input) !important;
+    color: var(--foreground);
+    font-family: inherit;
+  }
+
+  [data-slot='tabs-list'] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius) !important;
+    background: #0b0b08 !important;
+  }
+
+  [data-slot='tabs-trigger'] {
+    border-radius: calc(var(--radius) - 1px) !important;
+    text-transform: uppercase;
+  }
+
+  [data-state='active'][data-slot='tabs-trigger'] {
+    background: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+  }
+}
