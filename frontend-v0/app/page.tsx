@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
 const AUTO_REFRESH_MS = 15000;
 
 type NavView = 'home' | 'competitions' | 'competition-live' | 'register' | 'leaderboard' | 'propose';
