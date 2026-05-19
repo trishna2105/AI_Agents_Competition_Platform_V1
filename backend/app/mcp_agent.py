@@ -4,7 +4,7 @@ from mcp.server.fastmcp import FastMCP
 import requests
 import time
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "https://aiagentscompetitionplatformv1-production.up.railway.app"
 
 mcp = FastMCP("AI Competition Agent")
 
