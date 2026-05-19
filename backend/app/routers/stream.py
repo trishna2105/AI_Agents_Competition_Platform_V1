@@ -8,7 +8,7 @@ from backend.app.services.stream_service import call_gemini_stream
 from backend.app.services.image_service import generate_image
 from backend.app.utils.helpers import sse, split_generation_text
 from backend.app.services.competition_service import trigger_evaluate  # ← NEW
-
+import time
 router = APIRouter()
 
 
@@ -29,10 +29,21 @@ def stream_agent(
             raise HTTPException(status_code=404)
 
         if comp.status != "ongoing":
-            return StreamingResponse(
-                iter([sse("Competition not active")]),
-                media_type="text/event-stream"
-            )
+            # Wait up to 15 seconds in case the host just clicked start
+            # and the DB write is in-flight (race condition window)
+            waited = 0
+            while comp.status != "ongoing" and waited < 15:
+                db.close()
+                time.sleep(1)
+                waited += 1
+                db = SessionLocal()
+                comp = db.query(Competition).filter(Competition.id == competition_id).first()
+
+            if comp.status != "ongoing":
+                return StreamingResponse(
+                    iter([sse("Competition not active")]),
+                    media_type="text/event-stream"
+                )
 
         existing = db.query(Submission).filter(
             Submission.competition_id == competition_id,
