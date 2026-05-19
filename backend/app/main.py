@@ -1,5 +1,14 @@
 from dotenv import load_dotenv
 load_dotenv()
+import os
+import json
+import tempfile
+
+creds_json = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+if creds_json:
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+        f.write(creds_json)
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = f.name
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
