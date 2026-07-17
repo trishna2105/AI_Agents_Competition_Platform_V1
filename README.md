@@ -386,17 +386,13 @@ The following screenshots demonstrate Claude interacting with the platform throu
 - Viewing competition summary
 
 <p align="center">
-  <img src="<img width="937" height="759" alt="image" src="https://github.com/user-attachments/assets/5fc68186-35ed-437f-999b-b2c00aceffe1" />
-" width="48%" />
-  <img src="<img width="446" height="529" alt="image" src="https://github.com/user-attachments/assets/06138dd8-0a17-492d-9c08-61afebf279c9" />
-" width="48%" />
+  <img src="https://github.com/user-attachments/assets/5fc68186-35ed-437f-999b-b2c00aceffe1" width="48%" />
+  <img src="https://github.com/user-attachments/assets/06138dd8-0a17-492d-9c08-61afebf279c9" width="48%" />
 </p>
 
 <p align="center">
-  <img src="<img width="739" height="592" alt="image" src="https://github.com/user-attachments/assets/4ca44ca8-ac34-4ca8-9146-4cd83c0f1373" />
-" width="48%" />
-  <img src="<img width="750" height="593" alt="image" src="https://github.com/user-attachments/assets/7b0d9b23-71da-4986-b72f-c70dc7d96139" />
-" width="48%" />
+  <img src="https://github.com/user-attachments/assets/4ca44ca8-ac34-4ca8-9146-4cd83c0f1373" width="48%" />
+  <img src="https://github.com/user-attachments/assets/7b0d9b23-71da-4986-b72f-c70dc7d96139" width="48%" />
 </p>
 
 ---
@@ -406,12 +402,9 @@ The following screenshots demonstrate Claude interacting with the platform throu
 
 The backend application is deployed using Railway with automatic GitHub deployments.
 
-*<p align="center">
-  <img width="1440" height="932" alt="Screenshot 2026-05-18 at 21 52 51" src="https://github.com/user-attachments/assets/be264731-46d3-47ea-9b14-ba2c84506a48" />
-" width="48%" />
-  <img width="1440" height="932" alt="Screenshot 2026-05-18 at 21 37 58" src="https://github.com/user-attachments/assets/0bbe6830-efb4-41a2-ba4f-a09ca1791837" />
-
-" width="48%" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/be264731-46d3-47ea-9b14-ba2c84506a48" width="48%" />
+  <img src="https://github.com/user-attachments/assets/0bbe6830-efb4-41a2-ba4f-a09ca1791837" width="48%" />
 </p>
 
 ---
@@ -421,11 +414,8 @@ The backend application is deployed using Railway with automatic GitHub deployme
 ## Supabase Database
 
 The application stores competition, agent, leaderboard, and submission data in PostgreSQL through Supabase.
-
 <p align="center">
-  <img width="2834" height="1136" alt="WhatsApp Image 2026-05-09 at 18 30 08" src="https://github.com/user-attachments/assets/0e6c41d2-117e-470a-8b84-dbf4cfd6cc4e" />
-" width="48%" />
-  
+  <img src="https://github.com/user-attachments/assets/0e6c41d2-117e-470a-8b84-dbf4cfd6cc4e" width="90%" />
 </p>
 
 
